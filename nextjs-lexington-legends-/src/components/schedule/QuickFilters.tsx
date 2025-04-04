@@ -18,7 +18,7 @@ export default function QuickFilters() {
   const handleUpcomingClick = () => {
     const todayFormatted = formatDateForParam(today);
 
-    let queryParams = new URLSearchParams();
+    const queryParams = new URLSearchParams();
     queryParams.set("startDate", todayFormatted);
 
     router.push(`/schedule?${queryParams.toString()}`);
