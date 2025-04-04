@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getGameBySlug } from "../../../lib/sanity";
 import { formatDate, formatGameResult } from "../../../lib/utils";
 
-// Define the Game interface (unchanged, as it seems correct)
+// Define the Game interface
 interface Game {
   _id: string;
   opponent: string;
@@ -29,10 +29,11 @@ interface Params {
   slug: string;
 }
 
-// Update GameDetailsPageProps to match Next.js expectations
+// Update GameDetailsPageProps to match Next.js App Router expectations
+import { type NextPage } from "next"; // Import NextPage type
+
 interface GameDetailsPageProps {
-  params: Params;
-  searchParams?: { [key: string]: string | string[] | undefined }; // Optional search parameters
+  params: Params; // Should be a simple object, not a promise
 }
 
 export default async function GameDetailsPage({
@@ -57,7 +58,7 @@ export default async function GameDetailsPage({
           <div className="text-center py-12">
             <h2 className="text-3xl font-bold text-red-600">Game Not Found</h2>
             <p className="mt-4">
-              Sorry, we couldn't find the game you're looking for.
+              Sorry, we couldn&apos;t find the game you&apos;re looking for.
             </p>
             <Link
               href="/schedule"
@@ -80,7 +81,6 @@ export default async function GameDetailsPage({
       <Header />
 
       <main className="flex-grow container mx-auto p-8">
-        {/* Your Game Details Rendering Code */}
         <h1 className="text-2xl font-bold">{game.opponent}</h1>
         <p>Date: {formattedDate}</p>
         <p>Time: {game.time}</p>
@@ -91,6 +91,7 @@ export default async function GameDetailsPage({
             alt="Location"
             width={500}
             height={300}
+            priority={true} // Optional: Improves performance for critical images
           />
         )}
         {game.ticketsUrl && (
