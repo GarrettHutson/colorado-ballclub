@@ -2,7 +2,7 @@ import Link from "next/link";
 // import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-// import { getUpcomingGames } from "../lib/sanity";
+import { getUpcomingGames } from "../lib/sanity";
 import { formatDate } from "../lib/utils";
 
 interface Game {
