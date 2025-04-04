@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 export default function MonthPicker() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   const months = [
     { name: "January", value: "01" },
     { name: "February", value: "02" },
@@ -20,30 +20,30 @@ export default function MonthPicker() {
     { name: "November", value: "11" },
     { name: "December", value: "12" },
   ];
-  
+
   // Get current year
   const currentYear = new Date().getFullYear();
-  
+
   const handleMonthClick = (monthValue: string) => {
     // Create date range for the selected month
     const monthStart = `${currentYear}-${monthValue}-01`;
-    
+
     // Get the last day of the month
     const lastDay = new Date(currentYear, parseInt(monthValue), 0).getDate();
     const monthEnd = `${currentYear}-${monthValue}-${lastDay}`;
-    
-    let queryParams = new URLSearchParams();
+
+    const queryParams = new URLSearchParams();
     queryParams.set("startDate", monthStart);
     queryParams.set("endDate", monthEnd);
-    
+
     router.push(`/schedule?${queryParams.toString()}`);
   };
-  
+
   // Determine active month from URL parameters
   const isMonthActive = (monthValue: string) => {
     const startDate = searchParams.get("startDate");
     if (!startDate) return false;
-    
+
     const parts = startDate.split("-");
     return parts[1] === monthValue && parts[2] === "01";
   };

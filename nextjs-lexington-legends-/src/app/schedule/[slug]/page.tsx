@@ -52,7 +52,7 @@ export default async function GameDetailsPage({
           <div className="text-center py-12">
             <h2 className="text-3xl font-bold text-red-600">Game Not Found</h2>
             <p className="mt-4">
-              Sorry, we couldn't find the game you're looking for.
+              Sorry, we couldn&apos;t find the game you&apos;re looking for.
             </p>
             <Link
               href="/schedule"
