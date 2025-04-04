@@ -4,10 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { getGameBySlug } from "../../../lib/sanity";
 import { formatDate, formatGameResult } from "../../../lib/utils";
-import { GetServerSideProps } from "next";
 
 interface GameDetailsPageProps {
-  game: Game | null;
+  params: {
+    slug: string;
+  };
 }
 
 interface Game {
@@ -28,8 +29,12 @@ interface Game {
   };
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const { slug } = params as { slug: string };
+export default async function GameDetailsPage({
+  params,
+}: GameDetailsPageProps) {
+  const { slug } = params;
+
+  // Fetch the game data from Sanity
   let game: Game | null = null;
 
   try {
@@ -38,14 +43,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     console.error("Error fetching game:", error);
   }
 
-  return {
-    props: {
-      game,
-    },
-  };
-};
-
-export default function GameDetailsPage({ game }: GameDetailsPageProps) {
   if (!game) {
     return (
       <div className="min-h-screen flex flex-col">
