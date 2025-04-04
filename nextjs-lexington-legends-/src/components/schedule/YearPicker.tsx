@@ -6,14 +6,14 @@ import { useRouter, useSearchParams } from "next/navigation";
 export default function YearPicker() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   // Get current year and create a range of years (current year-1 to current year+1)
   const currentYear = new Date().getFullYear();
   const years = [currentYear - 1, currentYear, currentYear + 1];
-  
+
   // Determine active year from URL parameters or default to current year
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
-  
+
   useEffect(() => {
     const startDate = searchParams.get("startDate");
     if (startDate) {
@@ -23,16 +23,16 @@ export default function YearPicker() {
       setSelectedYear(currentYear);
     }
   }, [searchParams, currentYear]);
-  
+
   const handleYearClick = (year: number) => {
     // Preserve the month if it exists in the current filter
     const startDate = searchParams.get("startDate");
     const endDate = searchParams.get("endDate");
-    
+
     let month = "01";
     let endMonth = "12";
     let endDay = "31";
-    
+
     // Try to extract month from existing filters
     if (startDate) {
       const parts = startDate.split("-");
@@ -40,7 +40,7 @@ export default function YearPicker() {
         month = parts[1];
       }
     }
-    
+
     if (endDate) {
       const parts = endDate.split("-");
       if (parts.length > 1) {
@@ -52,15 +52,15 @@ export default function YearPicker() {
         }
       }
     }
-    
+
     // Create date range for the selected year
     const yearStart = `${year}-${month}-01`;
     const yearEnd = `${year}-${endMonth}-${endDay}`;
-    
-    let queryParams = new URLSearchParams();
+
+    const queryParams = new URLSearchParams();
     queryParams.set("startDate", yearStart);
     queryParams.set("endDate", yearEnd);
-    
+
     router.push(`/schedule?${queryParams.toString()}`);
     setSelectedYear(year);
   };

@@ -211,12 +211,12 @@ export default async function GameDetailsPage({
                     <h3 className="text-lg font-semibold">Location</h3>
                     {game.location === "Home" ? (
                       <p>
-                        Lexington Legends Ballpark
+                        Lexington Legends&apos; Ballpark
                         <br />
                         207 Legends Lane, Lexington, KY 40505
                       </p>
                     ) : (
-                      <p>Away Game - Opponent's Stadium</p>
+                      <p>Away Game - Opponent&apos;s Stadium</p>
                     )}
                   </div>
 
@@ -254,7 +254,7 @@ export default async function GameDetailsPage({
                     <div className="relative w-full h-64">
                       <Image
                         src={game.locationImageUrl}
-                        alt={`${game.location === "Home" ? "Lexington Legends Ballpark" : `${game.opponent} Stadium`}`}
+                        alt={`${game.location === "Home" ? "Lexington Legends&apos; Ballpark" : `${game.opponent} Stadium`}`}
                         fill
                         className="object-cover"
                       />
@@ -262,7 +262,7 @@ export default async function GameDetailsPage({
                     <div className="p-4 bg-gray-50">
                       <p>
                         {game.location === "Home"
-                          ? "Lexington Legends Ballpark"
+                          ? "Lexington Legends&apos; Ballpark"
                           : `${game.opponent} Stadium`}
                       </p>
                     </div>
