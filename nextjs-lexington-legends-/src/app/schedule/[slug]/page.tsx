@@ -5,12 +5,7 @@ import Link from "next/link";
 import { getGameBySlug } from "../../../lib/sanity";
 import { formatDate, formatGameResult } from "../../../lib/utils";
 
-interface GameDetailsPageProps {
-  params: {
-    slug: string;
-  };
-}
-
+// Define the Game interface (unchanged, as it seems correct)
 interface Game {
   _id: string;
   opponent: string;
@@ -27,6 +22,17 @@ interface Game {
   slug: {
     current: string;
   };
+}
+
+// Define params type for the dynamic route
+interface Params {
+  slug: string;
+}
+
+// Update GameDetailsPageProps to match Next.js expectations
+interface GameDetailsPageProps {
+  params: Params;
+  searchParams?: { [key: string]: string | string[] | undefined }; // Optional search parameters
 }
 
 export default async function GameDetailsPage({
@@ -75,6 +81,28 @@ export default async function GameDetailsPage({
 
       <main className="flex-grow container mx-auto p-8">
         {/* Your Game Details Rendering Code */}
+        <h1 className="text-2xl font-bold">{game.opponent}</h1>
+        <p>Date: {formattedDate}</p>
+        <p>Time: {game.time}</p>
+        <p>Location: {game.location}</p>
+        {game.locationImageUrl && (
+          <Image
+            src={game.locationImageUrl}
+            alt="Location"
+            width={500}
+            height={300}
+          />
+        )}
+        {game.ticketsUrl && (
+          <Link
+            href={game.ticketsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Buy Tickets
+          </Link>
+        )}
+        {game.result && <p>Result: {formatGameResult(game.result)}</p>}
       </main>
 
       <Footer />
