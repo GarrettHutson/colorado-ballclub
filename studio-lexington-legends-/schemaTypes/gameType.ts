@@ -80,8 +80,8 @@ export const gameType = defineType({
           initialValue: 'scheduled',
         },
         {
-          name: 'legendsScore',
-          title: 'Legends Score',
+          name: 'BallclubScore',
+          title: 'Ballclub Score',
           type: 'number',
         },
         {

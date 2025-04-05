@@ -15,20 +15,20 @@ export const promotions: Promotion[] = [
   {
     id: 'opening-day',
     title: 'Opening Day Celebration',
-    description: 'Join us for the season opener with special ceremonies, player introductions, and a post-game fireworks display! First 1,000 fans receive a commemorative 2025 Lexington Legends magnet schedule.',
+    description: 'Join us for the season opener with special ceremonies, player introductions, and a post-game fireworks display! First 1,000 fans receive a commemorative 2025 Colorado Ballclub magnet schedule.',
     date: '2025-04-10',
     opponent: 'Florence Y\'alls',
-    imageUrl: '/promotions/opening-day.jpg',
+    imageUrl: '/promotions/opening-day.svg',
     category: 'special',
     featured: true
   },
   {
     id: 'bobblehead-night',
-    title: 'Legends Bobblehead Night',
-    description: 'First 1,500 fans will receive an exclusive Lexington Legends bobblehead featuring our star player. Arrive early to guarantee yours!',
+    title: 'Ballclub Bobblehead Night',
+    description: 'First 1,500 fans will receive an exclusive Colorado Ballclub bobblehead featuring our star player. Arrive early to guarantee yours!',
     date: '2025-04-25',
     opponent: 'Evansville Otters',
-    imageUrl: '/promotions/bobblehead.jpg',
+    imageUrl: '/promotions/bobblehead.svg',
     category: 'giveaway',
     featured: true
   },
@@ -38,17 +38,17 @@ export const promotions: Promotion[] = [
     description: 'Enjoy $1 domestic beers all game long during this Thursday night matchup.',
     date: '2025-05-08',
     opponent: 'Gateway Grizzlies',
-    imageUrl: '/promotions/beer-night.jpg',
+    imageUrl: '/promotions/beer-night.svg',
     category: 'discount',
     featured: false
   },
   {
     id: 'marvel-night',
     title: 'Superhero Night',
-    description: 'Legends players will wear special Marvel-themed jerseys that will be auctioned off after the game. Special character appearances throughout the game!',
+    description: 'Ballclub players will wear special Marvel-themed jerseys that will be auctioned off after the game. Special character appearances throughout the game!',
     date: '2025-05-17',
     opponent: 'Windy City ThunderBolts',
-    imageUrl: '/promotions/superhero.jpg',
+    imageUrl: '/promotions/superhero.svg',
     category: 'theme',
     featured: true
   },
@@ -58,7 +58,7 @@ export const promotions: Promotion[] = [
     description: '$2 tacos all night long, plus special discounts on margaritas for fans 21+.',
     date: '2025-06-03',
     opponent: 'Joliet Slammers',
-    imageUrl: '/promotions/taco-tuesday.jpg',
+    imageUrl: '/promotions/taco-tuesday.svg',
     category: 'food',
     featured: false
   },
@@ -68,17 +68,17 @@ export const promotions: Promotion[] = [
     description: 'Stay after the game for a spectacular fireworks display set to classic rock music.',
     date: '2025-06-13',
     opponent: 'Lake Erie Crushers',
-    imageUrl: '/promotions/fireworks.jpg',
+    imageUrl: '/promotions/fireworks.svg',
     category: 'special',
     featured: true
   },
   {
-    id: 'legends-cap-night',
-    title: 'Legends Cap Giveaway',
-    description: 'First 1,000 fans will receive a limited edition Lexington Legends cap.',
+    id: 'Ballclub-cap-night',
+    title: 'Ballclub Cap Giveaway',
+    description: 'First 1,000 fans will receive a limited edition Colorado Ballclub cap.',
     date: '2025-06-27',
     opponent: 'Washington Wild Things',
-    imageUrl: '/promotions/cap.jpg',
+    imageUrl: '/promotions/cap.svg',
     category: 'giveaway',
     featured: false
   },
@@ -88,7 +88,7 @@ export const promotions: Promotion[] = [
     description: 'Special country music performances, themed contests, and special edition merchandise available only at this game.',
     date: '2025-07-11',
     opponent: 'Southern Illinois Miners',
-    imageUrl: '/promotions/country.jpg',
+    imageUrl: '/promotions/country.svg',
     category: 'theme',
     featured: false
   },
@@ -98,17 +98,17 @@ export const promotions: Promotion[] = [
     description: 'Santa will be making a special summer appearance! Holiday music, decorations, and special holiday-themed concessions.',
     date: '2025-07-25',
     opponent: 'Schaumburg Boomers',
-    imageUrl: '/promotions/christmas.jpg',
+    imageUrl: '/promotions/christmas.svg',
     category: 'theme',
     featured: true
   },
   {
-    id: 'legends-blanket-night',
-    title: 'Legends Blanket Giveaway',
-    description: 'First 750 fans will receive a comfortable Lexington Legends stadium blanket — perfect for those cool evening games!',
+    id: 'Ballclub-blanket-night',
+    title: 'Ballclub Blanket Giveaway',
+    description: 'First 750 fans will receive a comfortable Colorado Ballclub stadium blanket — perfect for those cool evening games!',
     date: '2025-08-08',
     opponent: 'New Jersey Jackals',
-    imageUrl: '/promotions/blanket.jpg',
+    imageUrl: '/promotions/blanket.svg',
     category: 'giveaway',
     featured: false
   },
@@ -118,7 +118,7 @@ export const promotions: Promotion[] = [
     description: 'Bring your furry friends to the ballpark! Special dog-friendly seating sections and contests for your canine companions.',
     date: '2025-08-22',
     opponent: 'Québec Capitales',
-    imageUrl: '/promotions/bark.jpg',
+    imageUrl: '/promotions/bark.svg',
     category: 'special',
     featured: true
   },
@@ -128,7 +128,7 @@ export const promotions: Promotion[] = [
     description: 'Our season finale celebration! Special giveaways every inning, player autographs before the game, and a post-game fireworks show.',
     date: '2025-09-07',
     opponent: 'Tri-City ValleyCats',
-    imageUrl: '/promotions/fan-appreciation.jpg',
+    imageUrl: '/promotions/fan-appreciation.svg',
     category: 'special',
     featured: true
   }

@@ -46,7 +46,7 @@ export function isPastGame(dateString: string): boolean {
  */
 export function formatGameResult(result: {
   status: string;
-  legendsScore?: number;
+  BallclubScore?: number;
   opponentScore?: number;
 }) {
   if (!result || result.status === 'scheduled') {
@@ -62,23 +62,23 @@ export function formatGameResult(result: {
   }
   
   if (result.status === 'in-progress') {
-    if (typeof result.legendsScore === 'number' && typeof result.opponentScore === 'number') {
-      return `In Progress: ${result.legendsScore} - ${result.opponentScore}`;
+    if (typeof result.BallclubScore === 'number' && typeof result.opponentScore === 'number') {
+      return `In Progress: ${result.BallclubScore} - ${result.opponentScore}`;
     }
     return 'In Progress';
   }
   
   if (result.status === 'final') {
-    if (typeof result.legendsScore === 'number' && typeof result.opponentScore === 'number') {
-      const won = result.legendsScore > result.opponentScore;
-      const lost = result.legendsScore < result.opponentScore;
+    if (typeof result.BallclubScore === 'number' && typeof result.opponentScore === 'number') {
+      const won = result.BallclubScore > result.opponentScore;
+      const lost = result.BallclubScore < result.opponentScore;
       
       if (won) {
-        return `W ${result.legendsScore}-${result.opponentScore}`;
+        return `W ${result.BallclubScore}-${result.opponentScore}`;
       } else if (lost) {
-        return `L ${result.legendsScore}-${result.opponentScore}`;
+        return `L ${result.BallclubScore}-${result.opponentScore}`;
       } else {
-        return `T ${result.legendsScore}-${result.opponentScore}`;
+        return `T ${result.BallclubScore}-${result.opponentScore}`;
       }
     }
     return 'Final';

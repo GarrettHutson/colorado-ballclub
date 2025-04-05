@@ -23,7 +23,7 @@ interface Game {
   ticketsUrl?: string;
   result?: {
     status: string;
-    legendsScore?: number;
+    BallclubScore?: number;
     opponentScore?: number;
   };
   slug: {

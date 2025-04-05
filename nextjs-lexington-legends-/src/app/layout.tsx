@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lexington Legends | Professional Baseball Team",
-  description: "Official website of the Lexington Legends baseball team. View team information, game schedule, news, and purchase tickets.",
+  title: "Colorado Ballclub | Professional Baseball Team",
+  description:
+    "Official website of the Colorado Ballclub baseball team. View team information, game schedule, news, and purchase tickets.",
 };
 
 export default function RootLayout({

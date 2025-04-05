@@ -1,6 +1,6 @@
-# Lexington Legends Website
+# Colorado Ballclub Website
 
-This is the official website for the Lexington Legends baseball team, built with [Next.js](https://nextjs.org) and [Sanity CMS](https://sanity.io).
+This is the official website for the Colorado Ballclub baseball team, built with [Next.js](https://nextjs.org) and [Sanity CMS](https://sanity.io).
 
 ## Features
 
@@ -22,14 +22,14 @@ This is the official website for the Lexington Legends baseball team, built with
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/lexington-legends.git
-cd lexington-legends
+git clone https://github.com/your-username/Colorado-Ballclub.git
+cd Colorado-Ballclub
 ```
 
 2. Install dependencies for the Next.js frontend:
 
 ```bash
-cd nextjs-lexington-legends-
+cd nextjs-Colorado-Ballclub-
 npm install
 ```
 
@@ -56,7 +56,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 1. Navigate to the Sanity Studio directory:
 
 ```bash
-cd ../studio-lexington-legends-
+cd ../studio-Colorado-Ballclub-
 ```
 
 2. Install dependencies:
@@ -104,7 +104,7 @@ The easiest way to deploy the Next.js frontend is to use [Vercel](https://vercel
 To deploy Sanity Studio:
 
 ```bash
-cd studio-lexington-legends-
+cd studio-Colorado-Ballclub-
 npm run deploy
 ```
 

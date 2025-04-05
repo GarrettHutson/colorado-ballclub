@@ -2,12 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { getAllPromotions, getFeaturedPromotions, Promotion } from "../../lib/promotions";
+import {
+  getAllPromotions,
+  getFeaturedPromotions,
+  Promotion,
+} from "../../lib/promotions";
 import { formatDate } from "../../lib/utils";
 
 export const metadata = {
-  title: "Game Promotions | Lexington Legends",
-  description: "Explore the exciting promotions and special events at Lexington Legends games this season."
+  title: "Game Promotions | Colorado Ballclub",
+  description:
+    "Explore the exciting promotions and special events at Colorado Ballclub games this season.",
 };
 
 function PromotionCard({ promotion }: { promotion: Promotion }) {
@@ -30,19 +35,30 @@ function PromotionCard({ promotion }: { promotion: Promotion }) {
             <span className="text-5xl">⚾</span>
           </div>
         )}
-        <div className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold text-white ${
-          promotion.category === 'giveaway' ? 'bg-purple-600' :
-          promotion.category === 'discount' ? 'bg-green-600' :
-          promotion.category === 'theme' ? 'bg-orange-600' :
-          promotion.category === 'food' ? 'bg-yellow-600' :
-          'bg-blue-600'
-        }`}>
-          {promotion.category.charAt(0).toUpperCase() + promotion.category.slice(1)}
+        <div
+          className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold text-white ${
+            promotion.category === "giveaway"
+              ? "bg-purple-600"
+              : promotion.category === "discount"
+                ? "bg-green-600"
+                : promotion.category === "theme"
+                  ? "bg-orange-600"
+                  : promotion.category === "food"
+                    ? "bg-yellow-600"
+                    : "bg-blue-600"
+          }`}
+        >
+          {promotion.category.charAt(0).toUpperCase() +
+            promotion.category.slice(1)}
         </div>
       </div>
       <div className="p-6 flex-grow flex flex-col">
-        <div className="text-sm text-blue-700 font-medium mb-2">{formattedDate} vs {promotion.opponent}</div>
-        <h3 className="text-xl font-bold text-gray-800 mb-3">{promotion.title}</h3>
+        <div className="text-sm text-blue-700 font-medium mb-2">
+          {formattedDate} vs {promotion.opponent}
+        </div>
+        <h3 className="text-xl font-bold text-gray-800 mb-3">
+          {promotion.title}
+        </h3>
         <p className="text-gray-600 mb-4 flex-grow">{promotion.description}</p>
         <div className="mt-auto">
           <Link
@@ -50,16 +66,16 @@ function PromotionCard({ promotion }: { promotion: Promotion }) {
             className="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium group"
           >
             View Game Details
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" 
-              viewBox="0 0 20 20" 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform"
+              viewBox="0 0 20 20"
               fill="currentColor"
             >
-              <path 
-                fillRule="evenodd" 
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" 
-                clipRule="evenodd" 
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
               />
             </svg>
           </Link>
@@ -92,17 +108,28 @@ function FeaturedPromotionCard({ promotion }: { promotion: Promotion }) {
         )}
       </div>
       <div className="p-6 md:p-8 md:w-3/5 flex flex-col">
-        <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white mb-4 ${
-          promotion.category === 'giveaway' ? 'bg-purple-600' :
-          promotion.category === 'discount' ? 'bg-green-600' :
-          promotion.category === 'theme' ? 'bg-orange-600' :
-          promotion.category === 'food' ? 'bg-yellow-600' :
-          'bg-blue-600'
-        }`}>
-          {promotion.category.charAt(0).toUpperCase() + promotion.category.slice(1)}
+        <div
+          className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white mb-4 ${
+            promotion.category === "giveaway"
+              ? "bg-purple-600"
+              : promotion.category === "discount"
+                ? "bg-green-600"
+                : promotion.category === "theme"
+                  ? "bg-orange-600"
+                  : promotion.category === "food"
+                    ? "bg-yellow-600"
+                    : "bg-blue-600"
+          }`}
+        >
+          {promotion.category.charAt(0).toUpperCase() +
+            promotion.category.slice(1)}
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold mb-2">{promotion.title}</h2>
-        <div className="text-blue-200 font-medium mb-4">{formattedDate} vs {promotion.opponent}</div>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2">
+          {promotion.title}
+        </h2>
+        <div className="text-blue-200 font-medium mb-4">
+          {formattedDate} vs {promotion.opponent}
+        </div>
         <p className="text-blue-100 mb-6">{promotion.description}</p>
         <div className="mt-auto flex flex-wrap gap-3">
           <Link
@@ -129,11 +156,11 @@ export default function PromotionsPage() {
 
   // Group promotions by category for filtering
   const categories = {
-    giveaway: allPromotions.filter(p => p.category === 'giveaway'),
-    theme: allPromotions.filter(p => p.category === 'theme'),
-    discount: allPromotions.filter(p => p.category === 'discount'),
-    special: allPromotions.filter(p => p.category === 'special'),
-    food: allPromotions.filter(p => p.category === 'food'),
+    giveaway: allPromotions.filter((p) => p.category === "giveaway"),
+    theme: allPromotions.filter((p) => p.category === "theme"),
+    discount: allPromotions.filter((p) => p.category === "discount"),
+    special: allPromotions.filter((p) => p.category === "special"),
+    food: allPromotions.filter((p) => p.category === "food"),
   };
 
   return (
@@ -145,11 +172,21 @@ export default function PromotionsPage() {
         <section className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">2025 Game Promotions</h1>
-              <p className="text-xl text-blue-100 mb-6">Enjoy special events, giveaways, and themed nights throughout the season</p>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                2025 Game Promotions
+              </h1>
+              <p className="text-xl text-blue-100 mb-6">
+                Enjoy special events, giveaways, and themed nights throughout
+                the season
+              </p>
               <div className="inline-block bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                <div className="text-lg font-medium">Don't miss out on our most popular promotions!</div>
-                <div className="text-blue-200 text-sm">Get your tickets early - special event nights often sell out quickly</div>
+                <div className="text-lg font-medium">
+                  Don't miss out on our most popular promotions!
+                </div>
+                <div className="text-blue-200 text-sm">
+                  Get your tickets early - special event nights often sell out
+                  quickly
+                </div>
               </div>
             </div>
           </div>
@@ -165,7 +202,10 @@ export default function PromotionsPage() {
               </h2>
               <div className="space-y-8">
                 {featuredPromotions.slice(0, 2).map((promotion) => (
-                  <FeaturedPromotionCard key={promotion.id} promotion={promotion} />
+                  <FeaturedPromotionCard
+                    key={promotion.id}
+                    promotion={promotion}
+                  />
                 ))}
               </div>
             </section>
@@ -211,14 +251,17 @@ export default function PromotionsPage() {
           {/* Newsletter Signup */}
           <section className="mt-16 bg-gradient-to-r from-blue-700 to-blue-600 rounded-2xl overflow-hidden shadow-xl">
             <div className="px-8 py-12 text-center text-white">
-              <h2 className="text-3xl font-bold mb-4">Never Miss a Promotion</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Never Miss a Promotion
+              </h2>
               <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-                Sign up for our newsletter to get early access to special promotions and be the first to know about new events.
+                Sign up for our newsletter to get early access to special
+                promotions and be the first to know about new events.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
+                <input
+                  type="email"
+                  placeholder="Your email address"
                   className="px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 flex-grow"
                 />
                 <button className="bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold px-6 py-3 rounded-lg transition-colors shadow-md hover:shadow-lg">
