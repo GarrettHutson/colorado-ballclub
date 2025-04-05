@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold flex items-center group">
             <span className="group-hover:scale-105 transition-transform duration-300">
-              Lexington Legends
+              Colorado Ballclub
             </span>
             <span className="ml-1 text-yellow-400 group-hover:rotate-12 transition-transform duration-300">
               ⚾
@@ -68,15 +68,26 @@ export default function Header() {
                   )}
                 </Link>
               </li>
-              
+
               {/* Tickets Dropdown */}
               <li className="relative group">
-                <button 
+                <button
                   className={`py-2 px-1 flex items-center ${isActivePrefix("/tickets") || isActive("/schedule") ? "text-yellow-300" : "hover:text-blue-200"} transition-colors duration-300`}
                 >
                   <span>Tickets</span>
-                  <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
                   </svg>
                   {(isActivePrefix("/tickets") || isActive("/schedule")) && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400"></span>
@@ -84,20 +95,20 @@ export default function Header() {
                 </button>
                 <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10 hidden group-hover:block">
                   <div className="py-1">
-                    <Link 
-                      href="/schedule" 
+                    <Link
+                      href="/schedule"
                       className={`block px-4 py-2 text-sm ${isActive("/schedule") ? "bg-blue-100 text-blue-900" : "text-gray-700 hover:bg-blue-50"}`}
                     >
                       Schedule
                     </Link>
-                    <Link 
-                      href="/tickets/packages" 
+                    <Link
+                      href="/tickets/packages"
                       className={`block px-4 py-2 text-sm ${isActive("/tickets/packages") ? "bg-blue-100 text-blue-900" : "text-gray-700 hover:bg-blue-50"}`}
                     >
                       Packages & Parties
                     </Link>
-                    <Link 
-                      href="/tickets/season-tickets" 
+                    <Link
+                      href="/tickets/season-tickets"
                       className={`block px-4 py-2 text-sm ${isActive("/tickets/season-tickets") ? "bg-blue-100 text-blue-900" : "text-gray-700 hover:bg-blue-50"}`}
                     >
                       Season Tickets
@@ -105,15 +116,26 @@ export default function Header() {
                   </div>
                 </div>
               </li>
-              
+
               {/* Ballpark Dropdown */}
               <li className="relative group">
-                <button 
+                <button
                   className={`py-2 px-1 flex items-center ${isActivePrefix("/ballpark") ? "text-yellow-300" : "hover:text-blue-200"} transition-colors duration-300`}
                 >
                   <span>Ballpark</span>
-                  <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
                   </svg>
                   {isActivePrefix("/ballpark") && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400"></span>
@@ -121,14 +143,14 @@ export default function Header() {
                 </button>
                 <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10 hidden group-hover:block">
                   <div className="py-1">
-                    <Link 
-                      href="/ballpark/about" 
+                    <Link
+                      href="/ballpark/about"
                       className={`block px-4 py-2 text-sm ${isActive("/ballpark/about") ? "bg-blue-100 text-blue-900" : "text-gray-700 hover:bg-blue-50"}`}
                     >
                       About the Park
                     </Link>
-                    <Link 
-                      href="/ballpark/faq" 
+                    <Link
+                      href="/ballpark/faq"
                       className={`block px-4 py-2 text-sm ${isActive("/ballpark/faq") ? "bg-blue-100 text-blue-900" : "text-gray-700 hover:bg-blue-50"}`}
                     >
                       FAQ
@@ -136,7 +158,7 @@ export default function Header() {
                   </div>
                 </div>
               </li>
-              
+
               <li>
                 <Link
                   href="/promotions"
@@ -173,10 +195,12 @@ export default function Header() {
                   Home
                 </Link>
               </li>
-              
+
               {/* Mobile Tickets Section */}
               <li>
-                <div className="py-2 px-3 font-medium text-yellow-300">Tickets</div>
+                <div className="py-2 px-3 font-medium text-yellow-300">
+                  Tickets
+                </div>
                 <ul className="ml-4 mt-1 space-y-1">
                   <li>
                     <Link
@@ -207,10 +231,12 @@ export default function Header() {
                   </li>
                 </ul>
               </li>
-              
+
               {/* Mobile Ballpark Section */}
               <li>
-                <div className="py-2 px-3 font-medium text-yellow-300">Ballpark</div>
+                <div className="py-2 px-3 font-medium text-yellow-300">
+                  Ballpark
+                </div>
                 <ul className="ml-4 mt-1 space-y-1">
                   <li>
                     <Link
@@ -232,7 +258,7 @@ export default function Header() {
                   </li>
                 </ul>
               </li>
-              
+
               <li>
                 <Link
                   href="/promotions"
