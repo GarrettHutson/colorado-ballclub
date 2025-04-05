@@ -29,18 +29,15 @@ interface Params {
   slug: string;
 }
 
-// Import the correct types for Next.js App Router
-import { Metadata } from "next";
-
-// Define the props type for App Router page components
-interface GameDetailsPageProps {
-  params: Params;
-  searchParams: Record<string, string | string[] | undefined>;
-}
+// In Next.js App Router, page components receive these props directly
+// We don't need to define our own interface that extends PageProps
 
 export default async function GameDetailsPage({
   params,
-}: GameDetailsPageProps) {
+}: {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
   const { slug } = params;
 
   // Fetch the game data from Sanity
