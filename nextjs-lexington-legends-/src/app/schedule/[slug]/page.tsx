@@ -29,11 +29,13 @@ interface Params {
   slug: string;
 }
 
-// Update GameDetailsPageProps to match Next.js App Router expectations
-import { type NextPage } from "next"; // Import NextPage type
+// Import the correct types for Next.js App Router
+import { Metadata } from "next";
 
+// Define the props type for App Router page components
 interface GameDetailsPageProps {
-  params: Params; // Should be a simple object, not a promise
+  params: Params;
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
 export default async function GameDetailsPage({
