@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold flex items-center group">
             <span className="group-hover:scale-105 transition-transform duration-300">
-              Colorado Ballclub
+              Lexington Legends
             </span>
             <span className="ml-1 text-yellow-400 group-hover:rotate-12 transition-transform duration-300">
               ⚾
@@ -93,7 +93,9 @@ export default function Header() {
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400"></span>
                   )}
                 </button>
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10 hidden group-hover:block">
+                {/* Pseudo-element to create a hover bridge between nav and dropdown */}
+                <div className="absolute top-full left-0 h-5 w-48 bg-transparent"></div>
+                <div className="absolute left-0 top-full w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" style={{ marginTop: '5px' }}>
                   <div className="py-1">
                     <Link
                       href="/schedule"
@@ -141,7 +143,9 @@ export default function Header() {
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400"></span>
                   )}
                 </button>
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10 hidden group-hover:block">
+                {/* Pseudo-element to create a hover bridge between nav and dropdown */}
+                <div className="absolute top-full left-0 h-5 w-48 bg-transparent"></div>
+                <div className="absolute left-0 top-full w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" style={{ marginTop: '5px' }}>
                   <div className="py-1">
                     <Link
                       href="/ballpark/about"
